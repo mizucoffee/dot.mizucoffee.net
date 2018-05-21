@@ -1,0 +1,19 @@
+{
+  "name": "mizucoffee.net",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kawakawaritsuki/mizucoffee.net",
+  "author": "Ritsuki Goto <develop@mizucoffee.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.1",
+    "webpack": "^4.8.3",
+    "webpack-stream": "^4.0.3"
+  }
+}
