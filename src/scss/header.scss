@@ -1,3 +1,5 @@
+$size: 36pt;
+
 header {
   background-color: $primary;
   color: $primary_text;
@@ -5,48 +7,61 @@ header {
   font-family: 'brother1816-medium';
 
   .welcome {
-    font-size: 32px;
+    font-size: 24pt;
     text-align: center;
   }
 
-  .domain {
-
+  .box {
     width: fit-content;
     margin: 0 auto;
+    font-size: $size;
+    height: $size;
+    line-height: 1em;
+  }
 
-    #roulette{
-      position: relative;
-      height: 4em;
-      overflow: hidden;
-      width: 0px;
-      float: left;
-      transition: width 300ms 0s ease;
+  #roulette {
+    position: relative;
+    overflow: hidden;
+    width: 0px;
+    height: 1.1em;
+    float: left;
+    transition: width 300ms 0s ease;
+  }
+
+  .item {
+    position: absolute;
+    width: fit-content;
+  }
+
+  .item-before {
+    top: -1.5em;
+  }
+
+  .item-show {
+    top: 0;
+    transition: top 300ms 0s ease;
+  }
+
+  .item-after {
+    top: 1.5em;
+    transition: top 300ms 0s ease;
+  }
+
+  .domain {
+    height: 1.1em;
+    width: fit-content;
+    float: left;
+  }
+}
+
+@media screen and (max-width: 786px){
+  header {
+    .welcome {
+      font-size: 5vw;
     }
-
-    .item {
-      position: absolute;
-      line-height: 1em;
-      font-size: 3em;
-      width: fit-content;
-    }
-
-    .item-before {
-      top: -1.5em;
-    }
-
-    .item-show {
-      top: 0;
-      transition: top 300ms 0s ease;
-    }
-
-    .item-after {
-      top: 1.5em;
-      transition: top 300ms 0s ease;
-    }
-
-    span {
-      font-size: 3em;
-      line-height: 1em;
+    .box {
+      font-size: 7vw;
+      height: 7vw;
     }
   }
 }

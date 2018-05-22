@@ -13,13 +13,13 @@ html(lang='ja')
   body
     header
       div.welcome Welcome to
-      div.domain
+      div.box
         div#roulette
           div.item.item-show= data[0].subdomain
           - data.shift()
           each item in data
             div.item.item-before= item.subdomain
-        span .mizucoffee.net
+        div.domain .mizucoffee.net
     main
       br
     footer &copy; 2018 mizucoffee.net
