@@ -3,6 +3,12 @@
     "subdomain": "www"
   },
   {
+    "subdomain": "dot"
+  },
+  {
+    "subdomain": "circle"
+  },
+  {
     "subdomain": "about"
   },
   {

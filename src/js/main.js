@@ -1,3 +1,5 @@
 const roulette = require('./roulette')
 
-roulette()
+window.onload = () => {
+  roulette()
+}

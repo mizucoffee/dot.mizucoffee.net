@@ -2,8 +2,8 @@ doctype html
 html(lang='ja')
   -
     const info = {
-      title: "mizucoffee.net",
-      description: "My home page"
+      title: "dot.mizucoffee.net",
+      description: "dot.mizucoffee.net"
     }
   head
     title=info.title
@@ -12,10 +12,14 @@ html(lang='ja')
     include head
   body
     header
+      div.welcome Welcome to
       div.domain
-        div.roulette
+        div#roulette
           div.item.item-show= data[0].subdomain
           - data.shift()
           each item in data
             div.item.item-before= item.subdomain
         span .mizucoffee.net
+    main
+      br
+    footer © 2018 mizucoffee.net
