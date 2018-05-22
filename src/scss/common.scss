@@ -1,5 +1,7 @@
 $primary: #321911;
 $primary_text: #FFFFFF;
+$background_color: #efdcd5;
+$modal_color: #fff7f4;
 
 
 * {
@@ -11,4 +13,8 @@ body {
   position: relative;
   background-color: #efdcd5;
   min-height: 100vh;
+}
+
+h1 {
+  color: $primary;
 }

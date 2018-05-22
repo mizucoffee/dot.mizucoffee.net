@@ -1,26 +1,36 @@
 [
   {
-    "subdomain": "www"
+    "subdomain": "www",
+    "description": "",
+    "disable":true
   },
   {
-    "subdomain": "dot"
+    "subdomain": "dot",
+    "description": "About .mizucoffee.net"
   },
   {
-    "subdomain": "circle"
+    "subdomain": "circle",
+    "description": "About circle"
   },
   {
-    "subdomain": "about"
+    "subdomain": "about",
+    "description": "About me"
   },
   {
-    "subdomain": "twiback"
+    "subdomain": "twiback",
+    "description": "Twitter Backup Service"
   },
   {
-    "subdomain": "grotesque"
+    "subdomain": "grotesque",
+    "description": "Grotesque Image Blocker for Twitter"
   },
   {
-    "subdomain": "easygit"
+    "subdomain": "easygit",
+    "description": "",
+    "disable":true
   },
   {
-    "subdomain": "prekara"
+    "subdomain": "prekara",
+    "description": "'Powerpoint Karaoke'"
   }
 ]

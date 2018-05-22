@@ -11,19 +11,18 @@ gulp.task('clean', () => rimraf.sync('build/**/*'))
 
 gulp.task('pug', () => {
 
-  let pug = $.pug({pretty: true})
-  pug.on('error', e => process.exit(1))
-
-  gulp.src('src/pug/*.pug')
+  gulp.src('src/pug/index.pug')
     .pipe($.data(f =>
       ({ data: JSON.parse(fs.readFileSync("./data.json")) })
     ))
-    .pipe(pug)
+    .pipe($.pug({pretty: true}))
+    .on('error',e => {})
     .pipe(gulp.dest('./build'))
 })
 
 gulp.task('js', () =>
   webpackStream(webpackConfig, webpack)
+  .on('error',e => {})
   .pipe(gulp.dest('./build'))
 )
 
@@ -37,7 +36,7 @@ gulp.task('scss', () =>
 
 gulp.task('res',() => {
   gulp.src('./res/**/*')
-  .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./build'))
 })
 
 gulp.task('default', ['clean','pug','js','scss','res'], () => {})
@@ -49,6 +48,7 @@ gulp.task('watch', ['default'], () => {
   })
 
   gulp.watch('./build/**/*',() => browserSync.reload())
+  gulp.watch('./build/*',() => browserSync.reload())
   gulp.watch('./src/scss/*',['scss'])
   gulp.watch(['./src/pug/*','./data.json'] ,['pug'])
   gulp.watch('./src/js/*'  ,['js'])

@@ -5,6 +5,7 @@ html(lang='ja')
       title: "dot.mizucoffee.net",
       description: "dot.mizucoffee.net"
     }
+  - data = data.filter((e) => !e.disable)
   head
     title=info.title
     script(src='./bundle.js')
@@ -15,11 +16,22 @@ html(lang='ja')
       div.welcome Welcome to
       div.box
         div#roulette
-          div.item.item-show= data[0].subdomain
-          - data.shift()
-          each item in data
+          - let roulette = data.concat()
+          div.item.item-show= roulette[0].subdomain
+          - roulette.shift()
+          each item in roulette
             div.item.item-before= item.subdomain
         div.domain .mizucoffee.net
     main
-      br
+      h1 subdomain
+      each item in data
+        div.domain-wrapper
+          a(href=`#${item.subdomain}`).subdomain= item.subdomain
+      div.modal-wrapper
+        each item in data
+          section(id=`${item.subdomain}`).modal
+            div.modal-title= `${item.subdomain}.mizucoffee.net`
+            div.modal-description= item.description
+            a(href=`//${item.subdomain}.mizucoffee.net`).link GO
+        a(href="#").base
     footer &copy; 2018 mizucoffee.net
