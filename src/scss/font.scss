@@ -1,8 +1,17 @@
 @font-face {
-  font-family: "brother1816";
-  src: url('./font/brother1816.eot');
-  src: url('./font/brother1816.eot?#iefix') format('embedded-opentype'),
-  url('./font/brother1816.woff') format('woff'),
-  url('./font/brother1816.tff') format('truetype'),
-  url('./font/brother1816.svg#svgFontName') format('svg');
+  font-family: "brother1816-light";
+  src: url('./font/brother1816-light.eot');
+  src: url('./font/brother1816-light.eot?#iefix') format('embedded-opentype'),
+  url('./font/brother1816-light.woff') format('woff'),
+  url('./font/brother1816-light.tff') format('truetype'),
+  url('./font/brother1816-light.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: "brother1816-medium";
+  src: url('./font/brother1816-medium.eot');
+  src: url('./font/brother1816-medium.eot?#iefix') format('embedded-opentype'),
+  url('./font/brother1816-medium.woff') format('woff'),
+  url('./font/brother1816-medium.tff') format('truetype'),
+  url('./font/brother1816-medium.svg#svgFontName') format('svg');
 }
