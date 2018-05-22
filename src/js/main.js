@@ -1,3 +1,3 @@
-const sub = require('./sub')
+const roulette = require('./roulette')
 
-sub()
+roulette()

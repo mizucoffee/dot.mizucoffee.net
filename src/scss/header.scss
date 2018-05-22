@@ -1,0 +1,42 @@
+header {
+  .domain {
+    width: 650px;
+    margin: 48px auto 0 auto;
+    font-family: 'brother1816';
+
+    .roulette{
+      position: relative;
+      height: 4em;
+      overflow: hidden;
+      width: 250px;
+      float: left;
+    }
+
+    .item {
+      position: absolute;
+      line-height: 1em;
+      font-size: 3em;
+      width: 250px;
+      text-align: right;
+    }
+
+    .item-before {
+      top: -1.5em;
+    }
+
+    .item-show {
+      top: 0;
+      transition: top 300ms 0s ease;
+    }
+
+    .item-after {
+      top: 1.5em;
+      transition: top 300ms 0s ease;
+    }
+
+    span {
+      font-size: 3em;
+      line-height: 1em;
+    }
+  }
+}

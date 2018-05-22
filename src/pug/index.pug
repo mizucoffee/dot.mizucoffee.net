@@ -1,7 +1,21 @@
 doctype html
 html(lang='ja')
+  -
+    const info = {
+      title: "mizucoffee.net",
+      description: "My home page"
+    }
   head
-    title='mizucoffee.net'
+    title=info.title
+    script(src='./bundle.js')
+    link(rel='stylesheet', href='./style.css', type='text/css')
     include head
   body
-    h1 .mizucoffee.net
+    header
+      div.domain
+        div.roulette
+          div.item.item-show= data[0].subdomain
+          - data.shift()
+          each item in data
+            div.item.item-before= item.subdomain
+        span .mizucoffee.net
