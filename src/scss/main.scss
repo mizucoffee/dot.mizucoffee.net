@@ -1,144 +1,130 @@
-main {
+#welcome {
+  padding: 32px 0 72px;
+  font-size: 32px;
+  text-align: center;
+  background-color: $primary;
+  color: $primary_text;
+  transition: color 1s;
+}
 
-  padding: 16px;
-  font-size: 20pt;
+#head-box {
+  width: fit-content;
+  height: 70px;
+  margin: -70px auto 0;
+  line-height: 1em;
+  font-size: 48px;
+  color: $primary_text;
+  overflow: hidden;
 
-  h1{
-    text-align: center;
-    font-size: 28pt;
-  }
-
-  .subdomain {
-    display: block;
-    color: $primary;
-    font-weight: 700;
-    margin: 16px auto 0;
+  .domain {
+    height: 55px;
     width: fit-content;
-  }
-
-  .modal-wrapper {
-    position: fixed;
-    width: 100%;
-    text-align: center;
-  }
-
-  .modal {
-    visibility: hidden;
-    opacity: 0;
-    position: fixed;
-    background: $modal_color;
-    top: 0;
-    left: 0;
-    width: 1vw;
-    height: 1vh;
-    border: 4px solid #795548;
-    overflow: hidden;
-    text-align: center;
-    line-height: 1em;
-    font-size: 20pt;
-    z-index: 20;
-    animation: modal-close 1s ease 0s forwards;
-
-    .modal-title {
-      padding: 24pt 0 20pt 0;
-      font-size: 24pt;
-      font-weight: 700;
-      background-color: $primary;
-      color: #fff;
-    }
-
-    .modal-description {
-      margin-top: 12pt;
-      margin-bottom: 22pt;
-    }
-
-    .link {
-      font-size: 20pt;
-    }
-
-    &:target {
-      visibility: visible;
-      opacity: 1;
-      animation: modal-open 1s ease 0s forwards;
-    }
-
-    &:target ~ .base {
-      display: block;
-    }
+    float: left;
+    transition: height 0s ease 1s;
   }
 }
+#roulette {
+  position: relative;
+  width: 0px;
+  height: 55px;
+  float: left;
+  overflow: hidden;
+  transition: width 300ms 0s ease, height 0s ease 1s;
+}
 
-.base {
-  position: fixed;
-  display: none;
+.item {
+  position: absolute;
+  width: fit-content;
+}
+
+.item-before {
+  top: -1.5em;
+}
+
+.item-show {
   top: 0;
-  legt: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  cursor: default;
+  transition: top 300ms 0s ease;
 }
 
-@keyframes modal-open {
-  0% {
-    height: 1px;
-    width: 1px;
-    margin: 50vh 50vw;
-  }
-  50% {
-    height: 156pt;
-    width: 1px;
-    margin: calc( calc(100vh - 156pt) / 2 ) 50vw;
-  }
-  100% {
-    height: 156pt;
-    width: 778px;
-    margin: calc( calc(100vh - 156pt) / 2 ) calc( calc( 100vw - 778px) / 2 );
-  }
-}
-@keyframes modal-open-mobile {
-  0% {
-    height: 1px;
-    width: 1px;
-    margin: 50vh 50vw;
-  }
-  50% {
-    height: 30vw;
-    width: 1px;
-    margin: calc( calc(100vh - 156pt) / 2 ) 50vw;
-  }
-  100% {
-    height: 40vw;
-    width: calc(100% - 8px);
-    margin: calc( calc(100vh - 40vw) / 2 ) 0;
-  }
+.item-after {
+  top: 1.5em;
+  transition: top 300ms 0s ease;
 }
 
-@media screen and (max-width: 786px){
-  main {
-    font-size: 2vw;
+.hideable {
+  transition: opacity 1s ease, height 1s ease 1s, margin 1s ease 1s, color 1s ease 1s, font-size 1s ease 1s, padding 1s ease 1s, width 1s ease;
+}
 
-    h1 {
-      font-size: 6vw;
-    }
-    .modal {
-      &:target {
-        visibility: visible;
-        opacity: 1;
-        animation: modal-open-mobile 1s ease 0s forwards;
-      }
-      .modal-title {
-        padding: 5vw 0 5vw;
-        font-size: 6vw;
-      }
-      .modal-description {
-        padding-top: 1vw;
-        font-size: 5vw;
-        margin-bottom: 4vw;
-      }
-      .link {
+#label {
+  text-align: center;
+  font-size: 42px;
+  height: 64px;
+  padding-top: 12px;
+  font-weight: 700;
+}
 
-      }
-    }
-  }
+.subdomain {
+  display: block;
+  color: $primary;
+  height: 32px;
+  margin: 16px auto 0;
+  width: fit-content;
+  font-size: 32px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#list-box {
+  width: fit-content;
+  margin: 0 auto;
+}
+#list-domain {
+  line-height: 1em;
+  font-size: 48px;
+  color: $primary_text;
+  overflow: hidden;
+  float: left;
+  width: 0;
+}
+
+.fade-out {
+  opacity: 0 !important;
+  height: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.none {
+  float: left;
+  width: 0;
+}
+
+.to-head {
+  margin-top: -70px !important;
+}
+
+.title {
+  height: 48px;
+  font-size: 48px;
+  color: #fff;
+  line-height: 1em;
+  margin-top: 0;
+  text-decoration: none;
+}
+
+.hide {
+  height: 0;
+}
+
+.left {
+  float: left;
+}
+
+.show {
+  width: 350px !important;
+}
+
+
+.inv {
+  color: rgba(0,0,0,0) !important;
 }
