@@ -15,7 +15,7 @@
   font-size: 48px;
   color: $primary_text;
   overflow: hidden;
-  transition: opacity 1s ease, height 1s ease 1s, margin 1s ease 1s;
+  transition: opacity 1s ease, height 1s ease, margin 1s ease;
 
   .domain {
     height: 55px;
@@ -57,7 +57,7 @@
   height: 64px;
   padding-top: 12px;
   font-weight: 700;
-  transition: opacity 1s ease, height 1s ease 1s, padding 1s ease 1s;
+  transition: opacity 1s ease, height 1s ease, padding 1s ease;
 }
 
 .subdomain {
@@ -69,13 +69,14 @@
   font-size: 32px;
   cursor: pointer;
   text-decoration: underline;
-  transition: opacity 1s ease, height 1s ease 1s, margin 1s ease 1s, color 1s ease 1s, font-size 1s ease 1s;
+  transition: opacity 1s ease, height 1s ease, margin 1s ease, color 1s ease, font-size 1s ease;
 }
 
 #list-box {
   width: fit-content;
   margin: 0 auto;
   transition: margin 1s ease 1s;
+  height: 70px;
 }
 
 #list-domain {
@@ -90,9 +91,6 @@
 
 .fade-out {
   opacity: 0 !important;
-  height: 0 !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
 }
 
 .none {
@@ -114,7 +112,9 @@
 }
 
 .hide {
-  height: 0;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  height: 0 !important;
 }
 
 .left {
@@ -127,4 +127,43 @@
 
 .inv-text {
   color: rgba(0,0,0,0) !important;
+}
+
+main {
+  text-align: center;
+}
+
+section {
+  display: none;
+  opacity: 0;
+  padding-top: 16px;
+  font-size: 24px;
+}
+
+.show-section {
+  display: block;
+  animation: fadein 1s ease 0s 1 forwards;
+}
+
+.back-btn {
+  margin-top: 24px;
+  cursor: pointer;
+  &:hover {
+  color: #555;
+  }
+}
+@keyframes fadein {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
 }

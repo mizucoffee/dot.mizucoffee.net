@@ -22,9 +22,12 @@ html(lang='ja')
           div.item.item-before= item.subdomain
       div.domain .mizucoffee.net
     h1#label subdomain
-    div#list-box
+    div.clearfix#list-box
       each item in data
         div.subdomain= item.subdomain
       div#list-domain .mizucoffee.net
-//      a(href="#").base
+    main
+      each item in data
+        section(id=`section-${item.subdomain}`)= item.description
+          div(id=`back-${item.subdomain}`).back-btn Back
     footer &copy; 2018 mizucoffee.net
