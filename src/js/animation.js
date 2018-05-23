@@ -7,7 +7,6 @@ module.exports = () => {
 
   button.forEach(e => {
     e.addEventListener('click',() => {
-      document.getElementById('list-box').classList.add('to-head')
 
       button.filter(i => i != e).forEach(i => i.classList.add('fade-out'))
       label.classList.add('fade-out')
@@ -15,6 +14,7 @@ module.exports = () => {
 
 
       setTimeout(() => {
+        document.getElementById('list-box').classList.add('to-head')
         e.classList.add('title')
         label.classList.add('hide')
         headbox.classList.add('hide')
@@ -38,28 +38,26 @@ module.exports = () => {
 
           document.getElementById(`section-${e.innerText}`).classList.remove('show-section')
           document.getElementById('list-domain').classList.remove('show')
-          document.getElementById('list-box').classList.remove('to-head')
 
           welcome.classList.add('inv-text')
 
           setTimeout(() => {
           button.filter(i => i != e).forEach(i => i.classList.remove('none'))
-            e.classList.remove('left')
-            e.classList.remove('title')
+            document.getElementById('list-box').classList.remove('to-head')
             headbox.classList.remove('hide')
-            label.classList.remove('hide')
-            button.filter(i => i != e).forEach(i => i.classList.remove('hide'))
             Array.from(headbox.children).forEach(i => i.classList.remove('hide'))
+            label.classList.remove('hide')
             welcome.innerText = "Welcome to"
             welcome.classList.remove('inv-text')
+            e.classList.remove('left')
+            e.classList.remove('title')
           },1000)
 
           setTimeout(() => {
-
+            button.filter(i => i != e).forEach(i => i.classList.remove('hide'))
             button.filter(i => i != e).forEach(i => i.classList.remove('fade-out'))
             label.classList.remove('fade-out')
             headbox.classList.remove('fade-out')
-
           },2000)
         })
 
