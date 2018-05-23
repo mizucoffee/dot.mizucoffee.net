@@ -1,11 +1,11 @@
 main {
 
   padding: 16px;
-  font-size: 2vw;
+  font-size: 20pt;
 
   h1{
     text-align: center;
-    font-size: 3vw;
+    font-size: 28pt;
   }
 
   .subdomain {
@@ -29,33 +29,31 @@ main {
     background: $modal_color;
     top: 0;
     left: 0;
-    margin: 10vh 10vw;
     width: 1vw;
     height: 1vh;
     border: 4px solid #795548;
     overflow: hidden;
     text-align: center;
     line-height: 1em;
-    font-size: 3vh;
+    font-size: 20pt;
     z-index: 20;
     animation: modal-close 1s ease 0s forwards;
 
     .modal-title {
-      padding-top: 3vh;
-      padding-bottom: 2vh;
-      font-size: 4vh;
+      padding: 24pt 0 20pt 0;
+      font-size: 24pt;
       font-weight: 700;
       background-color: $primary;
       color: #fff;
     }
 
     .modal-description {
-      margin-top: 1vh;
-      margin-bottom: 2.5vh;
+      margin-top: 12pt;
+      margin-bottom: 22pt;
     }
 
     .link {
-      font-size: 3vh;
+      font-size: 20pt;
     }
 
     &:target {
@@ -88,31 +86,59 @@ main {
     margin: 50vh 50vw;
   }
   50% {
-    height: 20vh;
+    height: 156pt;
     width: 1px;
-    margin: 40vh 50vw;
+    margin: calc( calc(100vh - 156pt) / 2 ) 50vw;
   }
   100% {
-    width: 80vh;
-    height: 20vh;
-    margin: 40vh calc( calc( 100vw - 80vh) / 2 );
+    height: 156pt;
+    width: 778px;
+    margin: calc( calc(100vh - 156pt) / 2 ) calc( calc( 100vw - 778px) / 2 );
   }
 }
-
-@keyframes modal-close {
+@keyframes modal-open-mobile {
   0% {
-    width: 80vh;
-    height: 20vh;
-    margin: 40vh calc( calc( 100vw - 80vh) / 2 );
-  }
-  50% {
-    height: 20vh;
-    width: 1px;
-    margin: 40vh 50vw;
-  }
-  100% {
     height: 1px;
     width: 1px;
     margin: 50vh 50vw;
+  }
+  50% {
+    height: 30vw;
+    width: 1px;
+    margin: calc( calc(100vh - 156pt) / 2 ) 50vw;
+  }
+  100% {
+    height: 40vw;
+    width: calc(100% - 8px);
+    margin: calc( calc(100vh - 40vw) / 2 ) 0;
+  }
+}
+
+@media screen and (max-width: 786px){
+  main {
+    font-size: 2vw;
+
+    h1 {
+      font-size: 6vw;
+    }
+    .modal {
+      &:target {
+        visibility: visible;
+        opacity: 1;
+        animation: modal-open-mobile 1s ease 0s forwards;
+      }
+      .modal-title {
+        padding: 5vw 0 5vw;
+        font-size: 6vw;
+      }
+      .modal-description {
+        padding-top: 1vw;
+        font-size: 5vw;
+        margin-bottom: 4vw;
+      }
+      .link {
+
+      }
+    }
   }
 }
