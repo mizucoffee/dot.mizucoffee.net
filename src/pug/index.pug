@@ -13,7 +13,7 @@ html(lang='ja')
     include head
   body
     div#welcome Welcome to
-    div.hideable.clearfix#head-box
+    div.clearfix#head-box
       div#roulette
         - let roulette = data.concat()
         div.item.item-show= roulette[0].subdomain
@@ -21,10 +21,10 @@ html(lang='ja')
         each item in roulette
           div.item.item-before= item.subdomain
       div.domain .mizucoffee.net
-    h1.hideable#label subdomain
-    div.hideable#list-box
+    h1#label subdomain
+    div#list-box
       each item in data
-        div.hideable.subdomain= item.subdomain
-      div.hideable#list-domain .mizucoffee.net
+        div.subdomain= item.subdomain
+      div#list-domain .mizucoffee.net
 //      a(href="#").base
     footer &copy; 2018 mizucoffee.net

@@ -15,12 +15,12 @@
   font-size: 48px;
   color: $primary_text;
   overflow: hidden;
+  transition: opacity 1s ease, height 1s ease 1s, margin 1s ease 1s;
 
   .domain {
     height: 55px;
     width: fit-content;
     float: left;
-    transition: height 0s ease 1s;
   }
 }
 #roulette {
@@ -29,7 +29,7 @@
   height: 55px;
   float: left;
   overflow: hidden;
-  transition: width 300ms 0s ease, height 0s ease 1s;
+  transition: width 300ms 0s ease;
 }
 
 .item {
@@ -51,16 +51,13 @@
   transition: top 300ms 0s ease;
 }
 
-.hideable {
-  transition: opacity 1s ease, height 1s ease 1s, margin 1s ease 1s, color 1s ease 1s, font-size 1s ease 1s, padding 1s ease 1s, width 1s ease;
-}
-
 #label {
   text-align: center;
   font-size: 42px;
   height: 64px;
   padding-top: 12px;
   font-weight: 700;
+  transition: opacity 1s ease, height 1s ease 1s, padding 1s ease 1s;
 }
 
 .subdomain {
@@ -72,12 +69,15 @@
   font-size: 32px;
   cursor: pointer;
   text-decoration: underline;
+  transition: opacity 1s ease, height 1s ease 1s, margin 1s ease 1s, color 1s ease 1s, font-size 1s ease 1s;
 }
 
 #list-box {
   width: fit-content;
   margin: 0 auto;
+  transition: margin 1s ease 1s;
 }
+
 #list-domain {
   line-height: 1em;
   font-size: 48px;
@@ -85,6 +85,7 @@
   overflow: hidden;
   float: left;
   width: 0;
+  transition: width 1s ease;
 }
 
 .fade-out {
@@ -124,7 +125,6 @@
   width: 350px !important;
 }
 
-
-.inv {
+.inv-text {
   color: rgba(0,0,0,0) !important;
 }
