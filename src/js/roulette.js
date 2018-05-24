@@ -1,6 +1,6 @@
 module.exports = () => {
   setTimeout(() => {
-    document.getElementById('splash').classList.add('display-none')
+    document.getElementById('splash-wrapper').classList.add('display-none')
     let item = document.getElementsByClassName("item")
     let roulette = document.getElementById("roulette")
 
