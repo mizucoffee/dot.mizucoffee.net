@@ -103,6 +103,10 @@
   margin-top: -70px !important;
 }
 
+.to-head2 {
+  margin-bottom: 22px !important;
+}
+
 .title {
   height: 48px;
   font-size: 48px;
@@ -139,15 +143,17 @@ main {
 }
 
 section {
-  display: none;
+  height: 0;
+  overflow: hidden;
   opacity: 0;
-  padding-top: 16px;
   font-size: 24px;
+  transition: all 1s ease 0s;
 }
 
 .show-section {
-  display: block;
-  animation: fadein 1s ease 0s 1 forwards;
+  height: fit-content;
+  opacity: 1;
+  padding-top: 16px;
 }
 
 .back-btn {
@@ -183,12 +189,6 @@ section {
   animation: splash-wrapper 1s ease 5s forwards;
 }
 
-@keyframes splash-wrapper {
-  100% {
-    background-color: transparent;
-  }
-}
-
 #splash {
   width: 512px;
   position: absolute;
@@ -197,10 +197,14 @@ section {
   animation: splash 1s ease 4s forwards;
 }
 
-@keyframes splash {
-  0% {
+@keyframes splash-wrapper {
+  to {
+    background-color: transparent;
   }
-  100% {
+}
+
+@keyframes splash {
+  to {
     width: 345px;
     left: calc(50% - 345px / 2);
     top: 45px;

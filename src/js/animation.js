@@ -24,6 +24,8 @@ module.exports = () => {
       },1000)
 
       setTimeout(() => {
+        document.getElementById('list-box').classList.add('to-head2')
+        
         e.classList.add('left')
         button.filter(i => i != e).forEach(i => i.classList.add('none'))
         document.getElementById('list-domain').classList.add('show')
@@ -40,9 +42,10 @@ module.exports = () => {
           document.getElementById('list-domain').classList.remove('show')
 
           welcome.classList.add('inv-text')
+          document.getElementById('list-box').classList.remove('to-head2')
 
           setTimeout(() => {
-          button.filter(i => i != e).forEach(i => i.classList.remove('none'))
+            button.filter(i => i != e).forEach(i => i.classList.remove('none'))
             document.getElementById('list-box').classList.remove('to-head')
             headbox.classList.remove('hide')
             Array.from(headbox.children).forEach(i => i.classList.remove('hide'))
