@@ -30,6 +30,7 @@
   color: $primary_text;
   overflow: hidden;
   transition: opacity 1s ease, height 1s ease, margin 1s ease;
+  -webkit-text-stroke: 1px #fff;
 
   .domain {
     height: 55px;
@@ -236,8 +237,7 @@ section {
   to {
     width: 346px;
     left: calc(50% - 346px / 2);
-    top: 46px;
-    stroke-width: 0;
+    top: 45px;
   }
 }
 
