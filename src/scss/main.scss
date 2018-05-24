@@ -67,6 +67,7 @@
   margin: 16px auto 0;
   width: fit-content;
   font-size: 32px;
+  line-height: 1em;
   cursor: pointer;
   text-decoration: underline;
   transition: opacity 1s ease, height 1s ease, margin 1s ease, color 1s ease, font-size 1s ease;
@@ -76,7 +77,7 @@
   width: fit-content;
   margin: 0 auto;
   transition: margin 1s ease;
-  height: 70px;
+  height: fit-content;
 }
 
 #list-domain {
@@ -125,6 +126,10 @@
   width: 350px !important;
 }
 
+.display-none{
+  display: none;
+}
+
 .inv-text {
   color: rgba(0,0,0,0) !important;
 }
@@ -166,4 +171,127 @@ section {
     display: block;
     opacity: 1;
   }
+}
+
+.splash-wrapper {
+  position: absolute;
+  background-color: $primary;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: splash-wrapper 1s ease 5s forwards;
+}
+
+@keyframes splash-wrapper {
+  100% {
+    background-color: transparent;
+  }
+}
+
+#splash {
+  width: 512px;
+  position: absolute;
+  top: calc(50% - 128px / 2);
+  left: calc(50% - 512px / 2);
+  animation: splash 1s ease 4s forwards;
+}
+
+@keyframes splash {
+  0% {
+  }
+  100% {
+    width: 345px;
+    left: calc(50% - 345px / 2);
+    top: 45px;
+    fill-width: 0;
+  }
+}
+
+svg {
+  fill: transparent;
+  stroke: transparent;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+}
+
+svg path{
+  stroke: white;
+  stroke-width: 3px;
+  animation: stroke 3s ease 1s forwards;
+}
+
+@keyframes stroke {
+  10% {
+    fill: transparent;
+  }
+  50% {
+    fill: transparent;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    fill: white;
+    stroke-dashoffset: 0;
+  }
+}
+
+svg path:nth-child(1) {
+  stroke-dasharray: 63.2844;
+  stroke-dashoffset: 63.2844;
+}
+svg path:nth-child(2) {
+  stroke-dasharray: 592.529;
+  stroke-dashoffset: 592.529;
+}
+svg path:nth-child(3) {
+  stroke-dasharray: 240.448;
+  stroke-dashoffset: 240.448;
+}
+svg path:nth-child(4) {
+  stroke-dasharray: 349.067;
+  stroke-dashoffset: 349.067;
+}
+svg path:nth-child(5) {
+  stroke-dasharray: 387.753;
+  stroke-dashoffset: 387.753;
+}
+svg path:nth-child(6) {
+  stroke-dasharray: 308.641;
+  stroke-dashoffset: 308.641;
+}
+svg path:nth-child(7) {
+  stroke-dasharray: 374.195;
+  stroke-dashoffset: 374.195;
+}
+svg path:nth-child(8) {
+  stroke-dasharray: 322.843;
+  stroke-dashoffset: 322.843;
+}
+svg path:nth-child(9) {
+  stroke-dasharray: 322.843;
+  stroke-dashoffset: 322.843;
+}
+svg path:nth-child(10) {
+  stroke-dasharray: 416.075;
+  stroke-dashoffset: 416.075;
+}
+svg path:nth-child(11) {
+  stroke-dasharray: 416.075;
+  stroke-dashoffset: 416.075;
+}
+svg path:nth-child(12) {
+  stroke-dasharray: 63.2844;
+  stroke-dashoffset: 63.2844;
+}
+svg path:nth-child(13) {
+  stroke-dasharray: 388.926;
+  stroke-dashoffset: 388.926;
+}
+svg path:nth-child(14) {
+  stroke-dasharray: 416.075;
+  stroke-dashoffset: 416.075;
+}
+svg path:nth-child(15) {
+  stroke-dasharray: 317.806;
+  stroke-dashoffset: 317.806;
 }
