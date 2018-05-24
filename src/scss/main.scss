@@ -234,10 +234,10 @@ section {
 
 @keyframes splash {
   to {
-    width: 345px;
-    left: calc(50% - 345px / 2);
+    width: 344px;
+    left: calc(50% - 344px / 2);
     top: 45px;
-    fill-width: 0;
+    stroke-width: 0;
   }
 }
 
