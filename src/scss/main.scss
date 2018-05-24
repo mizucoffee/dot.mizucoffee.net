@@ -1,3 +1,18 @@
+@mixin center($top: 0,$bottom: 0){
+  margin: {
+    top: $top;
+    left: auto;
+    bottom: $bottom;
+    right: auto;
+  }
+  width: fit-content;
+}
+
+@mixin path($path){
+  stroke-dasharray: $path;
+  stroke-dashoffset: $path;
+}
+
 #welcome {
   padding: 32px 0 72px;
   font-size: 32px;
@@ -8,9 +23,8 @@
 }
 
 #head-box {
-  width: fit-content;
+  @include center(-70px);
   height: 70px;
-  margin: -70px auto 0;
   line-height: 1em;
   font-size: 48px;
   color: $primary_text;
@@ -64,18 +78,19 @@
   display: block;
   color: $primary;
   height: 32px;
-  margin: 16px auto 0;
-  width: fit-content;
+  @include center(16px);
   font-size: 32px;
   line-height: 1em;
   cursor: pointer;
   text-decoration: underline;
   transition: opacity 1s ease, height 1s ease, margin 1s ease, color 1s ease, font-size 1s ease;
+  &:hover {
+    color: #a87d6f;
+  }
 }
 
 #list-box {
-  width: fit-content;
-  margin: 0 auto;
+  @include center();
   transition: margin 1s ease;
   height: fit-content;
 }
@@ -101,9 +116,6 @@
 
 .to-head {
   margin-top: -70px !important;
-}
-
-.to-head2 {
   margin-bottom: 22px !important;
 }
 
@@ -138,6 +150,10 @@
   color: rgba(0,0,0,0) !important;
 }
 
+.disable-pointer {
+  pointer-events: none;
+}
+
 main {
   text-align: center;
 }
@@ -157,10 +173,10 @@ section {
 }
 
 .back-btn {
-  margin-top: 24px;
+  @include center(16px);
   cursor: pointer;
   &:hover {
-  color: #555;
+    color: #555;
   }
 }
 @keyframes fadein {
@@ -239,63 +255,18 @@ svg path{
   }
 }
 
-svg path:nth-child(1) {
-  stroke-dasharray: 63.2844;
-  stroke-dashoffset: 63.2844;
-}
-svg path:nth-child(2) {
-  stroke-dasharray: 592.529;
-  stroke-dashoffset: 592.529;
-}
-svg path:nth-child(3) {
-  stroke-dasharray: 240.448;
-  stroke-dashoffset: 240.448;
-}
-svg path:nth-child(4) {
-  stroke-dasharray: 349.067;
-  stroke-dashoffset: 349.067;
-}
-svg path:nth-child(5) {
-  stroke-dasharray: 387.753;
-  stroke-dashoffset: 387.753;
-}
-svg path:nth-child(6) {
-  stroke-dasharray: 308.641;
-  stroke-dashoffset: 308.641;
-}
-svg path:nth-child(7) {
-  stroke-dasharray: 374.195;
-  stroke-dashoffset: 374.195;
-}
-svg path:nth-child(8) {
-  stroke-dasharray: 322.843;
-  stroke-dashoffset: 322.843;
-}
-svg path:nth-child(9) {
-  stroke-dasharray: 322.843;
-  stroke-dashoffset: 322.843;
-}
-svg path:nth-child(10) {
-  stroke-dasharray: 416.075;
-  stroke-dashoffset: 416.075;
-}
-svg path:nth-child(11) {
-  stroke-dasharray: 416.075;
-  stroke-dashoffset: 416.075;
-}
-svg path:nth-child(12) {
-  stroke-dasharray: 63.2844;
-  stroke-dashoffset: 63.2844;
-}
-svg path:nth-child(13) {
-  stroke-dasharray: 388.926;
-  stroke-dashoffset: 388.926;
-}
-svg path:nth-child(14) {
-  stroke-dasharray: 416.075;
-  stroke-dashoffset: 416.075;
-}
-svg path:nth-child(15) {
-  stroke-dasharray: 317.806;
-  stroke-dashoffset: 317.806;
-}
+svg path:nth-child(1)  { @include path(63.2844) }
+svg path:nth-child(2)  { @include path(592.529) }
+svg path:nth-child(3)  { @include path(240.448) }
+svg path:nth-child(4)  { @include path(349.067) }
+svg path:nth-child(5)  { @include path(387.753) }
+svg path:nth-child(6)  { @include path(308.641) }
+svg path:nth-child(7)  { @include path(374.195) }
+svg path:nth-child(8)  { @include path(322.843) }
+svg path:nth-child(9)  { @include path(322.843) }
+svg path:nth-child(10) { @include path(416.05) }
+svg path:nth-child(11) { @include path(416.075) }
+svg path:nth-child(12) { @include path(63.2844) }
+svg path:nth-child(13) { @include path(388.926) }
+svg path:nth-child(14) { @include path(416.075) }
+svg path:nth-child(15) { @include path(317.806) }

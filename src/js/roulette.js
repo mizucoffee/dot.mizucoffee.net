@@ -23,5 +23,5 @@ module.exports = () => {
 
       current = ++current >= item.length ? 0 : current
     }, 1000)
-  },5300)
+  },6000)
 }

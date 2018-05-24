@@ -4,17 +4,18 @@ module.exports = () => {
   let welcome = document.getElementById('welcome')
   let headbox = document.getElementById('head-box')
   let label = document.getElementById('label')
+  let listbox = document.getElementById('list-box')
+  let listdomain = document.getElementById('list-domain')
 
   button.forEach(e => {
     e.addEventListener('click',() => {
-
-      button.filter(i => i != e).forEach(i => i.classList.add('fade-out'))
+      e.classList.add('disable-pointer')
+      button.filter(i => i != e).forEach(i => {i.classList.add('fade-out'); i.classList.add('disable-pointer')})
       label.classList.add('fade-out')
       headbox.classList.add('fade-out')
 
-
       setTimeout(() => {
-        document.getElementById('list-box').classList.add('to-head')
+        listbox.classList.add('to-head')
         e.classList.add('title')
         label.classList.add('hide')
         headbox.classList.add('hide')
@@ -24,29 +25,24 @@ module.exports = () => {
       },1000)
 
       setTimeout(() => {
-        document.getElementById('list-box').classList.add('to-head2')
-        
+
         e.classList.add('left')
         button.filter(i => i != e).forEach(i => i.classList.add('none'))
-        document.getElementById('list-domain').classList.add('show')
+        listdomain.classList.add('show')
         document.getElementById(`section-${e.innerText}`).classList.add('show-section')
 
         welcome.innerText = "About"
         welcome.classList.remove('inv-text')
 
-
-
         document.getElementById(`back-${e.innerText}`).addEventListener('click', e2 => {
 
           document.getElementById(`section-${e.innerText}`).classList.remove('show-section')
-          document.getElementById('list-domain').classList.remove('show')
-
+          listdomain.classList.remove('show')
           welcome.classList.add('inv-text')
-          document.getElementById('list-box').classList.remove('to-head2')
 
           setTimeout(() => {
             button.filter(i => i != e).forEach(i => i.classList.remove('none'))
-            document.getElementById('list-box').classList.remove('to-head')
+            listbox.classList.remove('to-head')
             headbox.classList.remove('hide')
             Array.from(headbox.children).forEach(i => i.classList.remove('hide'))
             label.classList.remove('hide')
@@ -57,18 +53,15 @@ module.exports = () => {
           },1000)
 
           setTimeout(() => {
-            button.filter(i => i != e).forEach(i => i.classList.remove('hide'))
-            button.filter(i => i != e).forEach(i => i.classList.remove('fade-out'))
+            button.filter(i => i != e).forEach(i => {i.classList.remove('hide'); i.classList.remove('fade-out'); i.classList.remove('disable-pointer')})
             label.classList.remove('fade-out')
             headbox.classList.remove('fade-out')
+            e.classList.remove('disable-pointer')
           },2000)
         })
-
       },2000)
     })
   })
-
-
 }
 
 
