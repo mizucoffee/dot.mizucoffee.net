@@ -29,6 +29,7 @@ html(lang='ja')
     main
       each item in data
         section(id=`section-${item.subdomain}`)= item.description
+          a(href=`//${item.subdomain}.mizucoffee.net`).move-btn Go
           div(id=`back-${item.subdomain}`).back-btn Back
     footer &copy; 2018 mizucoffee.net
     div#splash-wrapper
