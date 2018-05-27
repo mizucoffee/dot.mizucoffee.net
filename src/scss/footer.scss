@@ -6,6 +6,7 @@ footer {
   width: 100%;
   background-color: $primary;
   color: $primary_text;
-  position: absolute;
+  position: fixed;
+  left: 0;
   bottom: 0;
 }
