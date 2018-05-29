@@ -13,7 +13,7 @@ gulp.task('pug', () => {
 
   gulp.src('src/pug/index.pug')
     .pipe($.data(f =>
-      ({ data: JSON.parse(fs.readFileSync("./data.json")) })
+      ({ data: JSON.parse(fs.readFileSync("./subdomains.json")) })
     ))
     .pipe($.pug({pretty: true}))
     .on('error',e => {})

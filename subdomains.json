@@ -35,7 +35,6 @@
   },
   {
     "subdomain": "status",
-    "description": "About Server",
-    "disable":true
+    "description": "About Server"
   }
 ]
