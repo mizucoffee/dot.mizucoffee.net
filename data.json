@@ -32,5 +32,10 @@
   {
     "subdomain": "prekara",
     "description": "'Powerpoint Karaoke'"
+  },
+  {
+    "subdomain": "status",
+    "description": "About Server",
+    "disable":true
   }
 ]
