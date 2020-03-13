@@ -7,10 +7,9 @@ const gulp      = require('gulp'),
   browserSync   = require('browser-sync'),
   fs            = require('fs')
 
-gulp.task('clean', () => rimraf.sync('build/**/*'))
+const clean = done => rimraf('build/**/*', [], done)
 
-gulp.task('pug', () => {
-
+const compilePug = () =>
   gulp.src('src/pug/index.pug')
     .pipe($.data(f =>
       ({ data: JSON.parse(fs.readFileSync("./subdomains.json")) })
@@ -18,30 +17,28 @@ gulp.task('pug', () => {
     .pipe($.pug({pretty: true}))
     .on('error',e => {})
     .pipe(gulp.dest('./build'))
-})
 
-gulp.task('js', () =>
+
+const compileJs = () =>
   webpackStream(webpackConfig, webpack)
-  .on('error',e => {})
-  .pipe(gulp.dest('./build'))
-)
+    .on('error',e => {})
+    .pipe(gulp.dest('./build'))
 
-gulp.task('scss', () =>
+const compileScss = () =>
   gulp.src('./src/scss/style.scss')
-  .pipe($.plumber())
-  .pipe($.sass())
-  .pipe($.autoprefixer())
-  .pipe(gulp.dest('./build'))
-)
+    .pipe($.plumber())
+    .pipe($.sass())
+    .pipe($.autoprefixer())
+    .pipe(gulp.dest('./build'))
 
-gulp.task('res',() => {
+
+const copyResource = () =>
   gulp.src('./res/**/*')
     .pipe(gulp.dest('./build'))
-})
 
-gulp.task('default', ['clean','pug','js','scss','res'], () => {})
+exports.default = gulp.series(clean, compilePug, compileJs, compileScss, copyResource)
 
-gulp.task('watch', ['default'], () => {
+gulp.task('watch', gulp.task('default'), () => {
 // browserSync({
 //    server: {baseDir: 'build'},
 //    port: 3000
@@ -49,7 +46,8 @@ gulp.task('watch', ['default'], () => {
 
 //  gulp.watch('./build/**/*',() => browserSync.reload())
 //  gulp.watch('./build/*',() => browserSync.reload())
-  gulp.watch('./src/scss/*',['scss'])
-  gulp.watch(['./src/pug/*','./data.json'] ,['pug'])
-  gulp.watch('./src/js/*'  ,['js'])
+  gulp.watch('./src/scss/*',gulp.task('scss'))
+  gulp.watch(['./src/pug/*','./data.json'] ,gulp.task('pug'))
+  gulp.watch('./src/js/*'  ,gulp.task('js'))
+  return
 })

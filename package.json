@@ -6,18 +6,19 @@
   "author": "Ritsuki Goto <develop@mizucoffee.net>",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.8.7",
     "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^8.0.6",
     "babel-preset-es2015": "^6.24.1",
-    "browser-sync": "^2.24.4",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-data": "^1.3.1",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-plumber": "^1.2.0",
+    "gulp-load-plugins": "^2.0.2",
+    "gulp-plumber": "^1.2.1",
     "gulp-pug": "^4.0.1",
-    "gulp-sass": "^4.0.1",
-    "webpack": "^4.8.3",
-    "webpack-stream": "^4.0.3"
+    "gulp-sass": "^4.0.2",
+    "webpack": "^4.42.0",
+    "webpack-stream": "^5.2.1"
   }
 }
