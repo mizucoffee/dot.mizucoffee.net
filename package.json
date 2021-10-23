@@ -5,6 +5,9 @@
   "repository": "https://github.com/kawakawaritsuki/mizucoffee.net",
   "author": "Ritsuki Goto <develop@mizucoffee.net>",
   "license": "MIT",
+  "scripts": {
+    "build": "gulp"
+  },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "babel-core": "^6.26.3",
