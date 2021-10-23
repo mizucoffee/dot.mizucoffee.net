@@ -5,6 +5,7 @@ const gulp      = require('gulp'),
   webpackStream = require('webpack-stream'),
   webpackConfig = require('./webpack.config'),
   browserSync   = require('browser-sync'),
+  sass = require('gulp-sass')(require('sass')),
   fs            = require('fs')
 
 const clean = done => rimraf('build/**/*', [], done)
@@ -27,7 +28,7 @@ const compileJs = () =>
 const compileScss = () =>
   gulp.src('./src/scss/style.scss')
     .pipe($.plumber())
-    .pipe($.sass())
+    .pipe(sass())
     .pipe($.autoprefixer())
     .pipe(gulp.dest('./build'))
 
